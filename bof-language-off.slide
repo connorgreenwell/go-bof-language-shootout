@@ -83,4 +83,8 @@ Go Concurrency Patterns (Rob Pike)
 
 .link http://talks.golang.org/2012/concurrency.slide
 
+This presentation
+
+.link https://github.com/connorgreenwell/go-bof-language-shootout
+
 .image http://golang.org/doc/gopher/doc.png

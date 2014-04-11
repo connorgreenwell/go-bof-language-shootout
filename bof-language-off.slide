@@ -1,0 +1,86 @@
+BoF - "Language Shootout"
+Go
+
+Connor Greenwell
+
+* Go is:
+
+- compiled
+- garbage collected
+- concurrent
+- awesome
+
+.image http://golang.org/doc/gopher/talks.png
+
+* Go is built around concurrency
+
+- goroutines
+- channels
+
+.image http://golang.org/doc/gopher/project.png
+
+* Goroutines
+
+The go keyword execues the trailing function independant of the rest of the program.
+
+	go doSomething()
+	go fmt.Println("hello, world")
+	go x += 1
+	go for { ... }
+
+A goroutine is _not_ a thread.
+Goroutines are multiplexed dynamically onto threads as needed.
+
+.play goslow.go /START GOSLOW/,/END GOSLOW/
+
+* Channels
+
+Channels are typed primitives used for passing information around.
+
+	var i int
+	var ch chan int // creates a channel of ints, ch
+
+	ch <- 1   // push an int onto ch
+	i <- ch   // pop int off of ch
+	ch <- i++ // push i + 1 onto ch
+	<- ch     // pop from ch and throw away result
+
+The arrow indicates where the information is going.
+
+.image http://golang.org/doc/gopher/run.png
+
+* Ok, neat. A channel is a queue.
+
+Channels are thread safe.
+
+This allows them to be accessed by many different goroutines at the same time.
+
+.play safe.go /START SAFE/,/END SAFE/
+
+* Example: Prime Sieve
+
+.code sieve.go /START GENFIL/,/END GENFIL/
+
+.link http://golang.org/doc/play/sieve.go
+
+* Example: Prime Sieve
+
+.play sieve.go /START MAIN/,/END MAIN/
+
+.link http://golang.org/doc/play/sieve.go
+
+* Read more
+
+A Tour Of Go
+
+.link http://tour.golang.org/ 
+
+golang.org
+
+.link http://golang.org/ 
+
+Go Concurrency Patterns (Rob Pike)
+
+.link http://talks.golang.org/2012/concurrency.slide
+
+.image http://golang.org/doc/gopher/doc.png

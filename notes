@@ -1,0 +1,21 @@
+# title
+
+# Go is...
+	- Go is an open source programming language that came out of Google about 4-5 years ago.
+
+# Go & concurrency
+	- Go is built around concurrency. There are two features that drive Go's concurrency: goroutines and channels.
+
+# goroutines
+	- portmanteu of "go" and "coroutine"
+	- splits function off onto its own stack.
+	- main stack doesnt wait for other goroutines
+
+# channels
+	- channels allow for communication between goroutines
+
+# queue
+	- this example spins off three goroutines that all read from the same channel and print out the read values. 
+
+# sieve part 1
+	- 
